@@ -1,0 +1,47 @@
+program: main.py
+name: CPOX_deblurring_IP_ISSN
+method: bayes
+metric:
+  goal: minimize
+  name: mean_best_test_loss
+parameters:
+  max_patience:
+    values: [35]
+  method:
+    values: ['inv_scale_space']
+  dataset:
+    values: ['CPOX']
+  lr:
+    min: 0.0001
+    max: 0.01
+  wd:
+    min: 0.0
+    max: 0.0001
+  cglsIter:
+    values: [4, 8, 16]
+  solveIter:
+    values: [16,32,50]
+  classify:
+    values: [0]
+  task:
+    values: [deblur]
+  layers:
+    values: [8,16,32]
+  channels:
+    values: [32,64,128]
+  train_batch_size:
+    values: [32, 64]
+  regnet:
+    values: [hyper] #this argument doesn't matter when the "method" is "pgd" or "inv_scale_space". Look at code for info
+  epochs:
+    values: [250]
+  datapath:
+    values: ['/data/shahriar/datasets/GNN/']
+  cluster:
+    values: [1] #1 means iters won't be printed to console
+  rnfPE:
+    values: [0,1]
+  blur_count:
+    values: [4]
+  #optimizer:
+  #  values: ["adam", "sgd"]

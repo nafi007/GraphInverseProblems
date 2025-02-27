@@ -1,0 +1,27 @@
+wandb
+wandb/
+/home/shahriar/inverseProblems/wandb
+run-*
+.vscode/
+
+# Ignore all .log files
+*.log
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore environment variable files
+.env
+
+# ignore saved models
+checkpoints/
+checkpoints/noMetaData
+
+# To stop models from being uploaded
+*.pth
+
+# Ignore Python bytecode and cache directories
+src/__pycache__/
+__pycache__
+*.pyc
+__pycache__/

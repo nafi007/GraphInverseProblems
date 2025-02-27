@@ -1,0 +1,41 @@
+program: main.py
+name: CLUSTER_masking_IP
+method: bayes
+metric:
+  goal: maximize
+  name: best_test_acc
+parameters:
+  dataset:
+    values: ['CLUSTER']
+  lr:
+    min: 0.0001
+    max: 0.01
+  wd:
+    min: 0.0
+    max: 0.0001
+  cglsIter:
+    values: [8]
+  solveIter:
+    values: [1,2,4]
+  classify:
+    values: [1]
+  task:
+    values: [mask]
+  layers:
+    values: [2,4,8]
+  channels:
+    values: [32,64,128]
+  batch_size:
+    values: [16, 32, 64]
+  regnet:
+    values: [hyper]
+  epochs:
+    values: [500]
+  datapath:
+    values: ['/home/eliasof/inverseProblems/data/']
+  cluster:
+    values: [1]
+  rnfPE:
+    values: [0,1]
+  #optimizer:
+  #  values: ["adam", "sgd"]

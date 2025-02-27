@@ -1,0 +1,45 @@
+program: main.py
+name: METRLA_pathlength_32_IP_hyper
+method: bayes
+metric:
+  goal: minimize
+  name: mean_best_test_loss
+parameters:
+  method:
+    values: ['drip']
+  dataset:
+    values: ['METRLA']
+  lr:
+    min: 0.0001
+    max: 0.01
+  wd:
+    min: 0.0
+    max: 0.0001
+  cglsIter:
+    values: [8,16,32]       #[2,4,8]
+  solveIter:
+    values: [8,16,32]         #[2,4,8,16,32]
+  classify:
+    values: [0]
+  task:
+    values: [path]
+  layers:
+    values: [8,16,32,64]          #[2,4,8,16]
+  channels:
+    values: [32,64,128]
+  train_batch_size:
+    values: [16, 32, 64, 128]
+  regnet:
+    values: [hyper]
+  epochs:
+    values: [100]
+  datapath:
+    values: ['/data/shahriar/datasets/GNN/']
+  cluster:
+    values: [1]
+  rnfPE:
+    values: [0,1]
+  pathLength:
+    values: [32]
+  #optimizer:
+  #  values: ["adam", "sgd"]

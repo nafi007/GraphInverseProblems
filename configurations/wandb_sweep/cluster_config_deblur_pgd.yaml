@@ -1,0 +1,43 @@
+program: main.py
+name: CLUSTER_deblurring_IP
+method: bayes
+metric:
+  goal: maximize
+  name: mean_best_test_accs
+parameters:
+  method:
+    values: ['pgd']
+  dataset:
+    values: ['CLUSTER']
+  lr:
+    min: 0.0001
+    max: 0.01
+  wd:
+    min: 0.0
+    max: 0.0001
+  cglsIter:
+    values: [8, 16, 32]
+  solveIter:
+    values: [8,16,32]
+  classify:
+    values: [1]
+  task:
+    values: [deblur]
+  layers:
+    values: [8,16]
+  channels:
+    values: [32,64,128]
+  train_batch_size:
+    values: [32, 64]
+  regnet:
+    values: [pgd]
+  epochs:
+    values: [100]
+  datapath:
+    values: ['/data/shahriar/datasets/GNN/']
+  cluster:
+    values: [0]
+  rnfPE:
+    values: [0,1]
+  #optimizer:
+  #  values: ["adam", "sgd"]

@@ -1,0 +1,45 @@
+program: main.py
+name: CPOX_deblurring_IP_pgd
+method: bayes
+metric:
+  goal: minimize
+  name: mean_best_test_loss
+parameters:
+  method:
+    values: ['pgd']
+  dataset:
+    values: ['CPOX']
+  lr:
+    min: 0.0001
+    max: 0.01
+  wd:
+    min: 0.0
+    max: 0.0001
+  cglsIter:
+    values: [5, 8, 10]
+  solveIter:
+    values: [15,20,30,40]
+  classify:
+    values: [0]
+  task:
+    values: [deblur]
+  layers:
+    values: [8,16,32]
+  channels:
+    values: [32,64,128]
+  train_batch_size:
+    values: [32, 64]
+  regnet:
+    values: [hyper] #this argument doesn't matter when the "method" is "pgd". Look at code for info
+  epochs:
+    values: [250]
+  datapath:
+    values: ['/data/shahriar/datasets/GNN/']
+  cluster:
+    values: [1]
+  rnfPE:
+    values: [0,1]
+  blur_count:
+    values: [8]
+  #optimizer:
+  #  values: ["adam", "sgd"]

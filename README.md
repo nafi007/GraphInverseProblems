@@ -39,11 +39,14 @@ conda activate GRIP
 ## Citation
 If you use our work, please cite our paper:  
 
-@article{eliasof2024learning,  
-  title={Learning Regularization for Graph Inverse Problems},  
-  author={Eliasof, Moshe and Siddiqui, Md Shahriar Rahim and Sch{\"o}nlieb, Carola-Bibiane and Haber, Eldad},  
-  journal={arXiv preprint arXiv:2408.10436},  
-  year={2024}  
+>@inproceedings{eliasof2025learning,
+  title={Learning Regularization for Graph Inverse Problems},
+  author={Eliasof, Moshe and Siddiqui, Md Shahriar Rahim and Sch{\"o}nlieb, Carola-Bibiane and Haber, Eldad},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={39},
+  number={16},
+  pages={16471--16479},
+  year={2025}
 }
   
 
